@@ -20,8 +20,12 @@ defmodule Dispatcher do
   #   Proxy.forward conn, path, "http://resource/themes/"
   # end
 
-  match "_", %{ last_call: true } do
-    send_resp( conn, 404, "Route not found.  See config/dispatcher.ex" )
+  match "/mqtt/*path" do
+    Proxy.forward conn, path, "http://mqtt/"
+  end
+
+  match "/*path" do
+    Proxy.forward conn, path, "http://resource/"
   end
 
 end

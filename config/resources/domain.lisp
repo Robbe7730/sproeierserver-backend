@@ -64,4 +64,17 @@
 ;;   :resource-base (s-url "http://webcat.tmp.tenforce.com/themes/")
 ;;   :on-path "themes")
 
+(define-resource mqtt-message ()
+    :class (s-prefix "schema:Message")
+    :properties `(
+        (:message-type :string ,(s-prefix "ext:mqttMessageType") :required)
+        (:created-at :datetime ,(s-prefix "schema:dateSent") :required)
+        (:topic :string ,(s-prefix "ext:mqttTopic"))
+        (:body :string ,(s-prefix "schema:text"))
+        (:retain :boolean ,(s-prefix "ext:mqttRetain"))
+    )
+    :resource-base (s-url "http://mu.semte.ch/vocabularies/ext/mqtt-service")
+    :on-path "mqtt-message"
+)
+
 ;;

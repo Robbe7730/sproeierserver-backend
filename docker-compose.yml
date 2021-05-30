@@ -29,3 +29,8 @@ services:
       - db:database
     volumes:
       - ./config/resources:/config
+  mqtt:
+    image: robbe7730/mqtt-service
+    links:
+      - resource:resource
+
