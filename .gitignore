@@ -6,3 +6,4 @@
 
 docker-compose.override.yml
 
+config/mqtt-service/config.ini
