@@ -33,4 +33,7 @@ services:
     image: robbe7730/mqtt-service
     links:
       - resource:resource
-
+    expose:
+      - 1883
+    volumes:
+      - ./config/mqtt-service:/app/config
