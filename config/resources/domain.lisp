@@ -74,7 +74,7 @@
         (:retain :boolean ,(s-prefix "ext:mqttRetain"))
     )
     :resource-base (s-url "http://mu.semte.ch/vocabularies/ext/mqtt-service")
-    :on-path "mqtt-message"
+    :on-path "mqtt-messages"
 )
 
 ;;

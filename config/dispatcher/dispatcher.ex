@@ -24,6 +24,10 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://mqtt/"
   end
 
+  post "/mqtt-messages/*path" do
+    Proxy.forward conn, path, "http://mqtt/"
+  end
+
   match "/*path" do
     Proxy.forward conn, path, "http://resource/"
   end
