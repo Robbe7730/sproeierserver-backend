@@ -28,8 +28,7 @@ defmodule Dispatcher do
     Proxy.forward conn, path, "http://mqtt/"
   end
 
-  match "/*path" do
-    Proxy.forward conn, path, "http://resource/"
+  get "/*path", %{ last_call: true} do
+    Proxy.forward conn, path, "http://frontend/" 
   end
-
 end
