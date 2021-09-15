@@ -5,6 +5,8 @@ services:
     image: robbe7730/sproeierserver-frontend
     volumes:
       - ./config/frontend:/config
+    links:
+      - identifier:backend
   identifier:
     image: semtech/mu-identifier:1.9.1
     links:
